@@ -1,0 +1,21 @@
+{
+  "name": "lab2",
+  "version": "1.0.0",
+  "description": "Lab2 Andrii Simchuk",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/simatiz/kpi-lab2.git"
+  },
+  "author": "Andrii Simchuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simatiz/kpi-lab2/issues"
+  },
+  "homepage": "https://github.com/simatiz/kpi-lab2#readme"
+}
