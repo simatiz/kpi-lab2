@@ -13,7 +13,7 @@ const processedContentTypes = {
     }
 }
 
-const server = http.createServer(async (req, res) => {
+const index = http.createServer(async (req, res) => {
     const url = new URL(req.url || '/', `https://${req.headers.host}`);
     const routeModule = router.get(url.pathname) ?? {};
     const handler = routeModule[req?.method] ?? defaultHandler;
@@ -36,13 +36,13 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.on('clientError', (err, socket) => {
+index.on('clientError', (err, socket) => {
    socket.end('HTTP/1.1 400 Bad Request\r\n\r\n');
 });
-server.listen(parseInt(process.env.PORT) || 9000);
+index.listen(parseInt(process.env.PORT) || 9000);
 
 process.on('SIGINT', () => {
-   server.close(error=>{
+   index.close(error=>{
        if (error) {
            console.error(error);
            process.exit(1);
