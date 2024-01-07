@@ -9,7 +9,7 @@ function POST(req, res, payload) {
 }
 
 function OPTIONS(req, res){
-    res.setHeader('Allow', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.end();
 }
 
