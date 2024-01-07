@@ -1,6 +1,6 @@
 function GET(req, res) {
     res.setHeader('content-type', 'text/plain');
-    res.end(`OK`);
+    res.end(`OK1`);
 }
 
 function POST(req, res, payload) {
