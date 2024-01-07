@@ -1,16 +1,13 @@
 function GET(req, res) {
-    res.setHeader('content-type', 'text/plain');
-    res.end(`OK`);
+    res.join({name:`OK`});
 }
 
 function POST(req, res, payload) {
-    res.setHeader('content-type', 'text/plain');
-    res.end('POST request handled' + payload);
+    res.json({name: "root handlerOptions"})
 }
 
-function OPTIONS(req, res){
-    res.setHeader('Allow', 'GET, POST, OPTIONS');
-    res.end();
+function OPTIONS(req, res, payload){
+    res.json(payload)
 }
 
 export {GET, POST, OPTIONS}
