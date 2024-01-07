@@ -1,16 +1,10 @@
 function GET(req, res) {
-    res.setHeader('content-type', 'text/plain');
-    res.end(`OK2`);
+    throw "unhandled error2";
+    res.json({name: 'test handlerGet'})
 }
 
-function POST(req, res, payload) {
-    res.setHeader('content-type', 'text/plain');
-    res.end('POST request handled' + payload);
+function PURGE(req, res) {
+    res.json({name: 'test handlerOptions'})
 }
 
-function OPTIONS(req, res){
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.end();
-}
-
-export {GET, POST, OPTIONS}
+export {GET, PURGE}
