@@ -16,7 +16,7 @@ async function loadRoutesDir(dirName, base) {
     const dir = await readdir(workDir, {withFileTypes: true});
     for (const dirent of dir) {
         if (dirent.isDirectory()) {
-            return loadRoutesDir(dirent.name, path.join(base, dirName))
+            await loadRoutesDir(dirent.name, path.join(base, dirName))
         } else if (dirent.isFile() && path.extname(dirent.name) === '.js' && path.basename(dirent.name, '.js') === 'index') {
             let modulePath = pathToFileURL(path.join(workDir, dirent.name))
             let module = await import(modulePath);
